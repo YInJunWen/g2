@@ -1022,6 +1022,64 @@ export function createThemeByStyleSheet(styleSheet: StyleSheet): LooseObject {
           },
         },
       },
+      violin: {
+        violin: {
+          default: {
+            style: shapeStyles.line.default,
+          },
+          active: {
+            style: shapeStyles.line.active,
+          },
+          inactive: {
+            style: shapeStyles.line.inactive,
+          },
+          selected: {
+            style: shapeStyles.line.selected,
+          },
+        },
+        smooth: {
+          default: {
+            style: shapeStyles.line.default,
+          },
+          active: {
+            style: shapeStyles.line.active,
+          },
+          inactive: {
+            style: shapeStyles.line.inactive,
+          },
+          selected: {
+            style: shapeStyles.line.selected,
+          },
+        },
+        hollow: {
+          default: {
+            style: shapeStyles.hollowArea.default,
+          },
+          active: {
+            style: shapeStyles.hollowArea.active,
+          },
+          inactive: {
+            style: shapeStyles.hollowArea.inactive,
+          },
+          selected: {
+            style: shapeStyles.hollowArea.selected,
+          },
+        },
+        'hollow-smooth': {
+          default: {
+            style: shapeStyles.hollowArea.default,
+          },
+          active: {
+            style: shapeStyles.hollowArea.active,
+          },
+          inactive: {
+            style: shapeStyles.hollowArea.inactive,
+          },
+          selected: {
+            style: shapeStyles.hollowArea.selected,
+          },
+        },
+      },
     },
     components: {
       axis: {
@@ -1343,13 +1401,13 @@ export function createThemeByStyleSheet(styleSheet: StyleSheet): LooseObject {
         },
         default: {
           style: {
-            trackColor: 'rgba(0,0,0,0)',
-            thumbColor: 'rgba(0,0,0,0.15)',
+            trackColor: styleSheet.scrollbarTrackFillColor,
+            thumbColor: styleSheet.scrollbarThumbFillColor,
           },
         },
         hover: {
           style: {
-            thumbColor: 'rgba(0,0,0,0.2)',
+            thumbColor: styleSheet.scrollbarThumbHighlightFillColor,
           },
         },
       },

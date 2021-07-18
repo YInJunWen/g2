@@ -36,7 +36,7 @@ G2 is a visualization grammar, a data-driven visual language with a high level o
 - 🦍Advanced View module: with the ability to develop customized multi-dimension data analysis graphics.
 - 👬Dual-engine rendering: with the ability to switch Canvas and SVG freely.
 - 💄Visual components: interaction-oriented, elegant experience.
-- 🛡Fully embrace Typescript: Complete type definition files are provided.
+- 🛡Fully embrace TypeScript: Complete type definition files are provided.
 
 ## 📦 Installation
 
@@ -116,7 +116,7 @@ To become a contributor, please follow our [contributing guide](https://github.c
 
 <a href="https://issuehunt.io/r/antvis/G2" rel="nofollow" target="_blank"><img src="https://camo.githubusercontent.com/fcf6ed4dcbd95ccadfe62647fc93194b7262c862de38406e5dae68aa682c85c3/68747470733a2f2f697373756568756e742e696f2f7374617469632f656d6265642f697373756568756e742d627574746f6e2d76312e737667" alt="Let's fund issues in this repository" data-canonical-src="https://issuehunt.io/static/embed/issuehunt-button-v1.svg" style="max-width:100%;"></a>
 
-## Contact us
+## 📧 Contact us
 
 DingTalk Group: 30233731
 

@@ -444,6 +444,9 @@ export interface ShapePoint {
   size?: number;
 }
 
+/** 小提琴图 shape 关键点信息 */
+export type ViolinShapePoint = ShapePoint & { _size?: number[] };
+
 /** 注册 ShapeFactory 需要实现的接口。 */
 export interface RegisterShapeFactory {
   /** 默认的 shape 类型。 */
@@ -1029,7 +1032,7 @@ export interface LegendCfg {
   /**
    * **分类图例适用**，图例项的 marker 图标的配置。
    */
-  marker?: MarkerCfg;
+  marker?: MarkerCfg | ((name: string, index: number, item: { name: string; value: string } & MarkerCfg) => MarkerCfg);
   /**
    * **适用于分类图例**，当图例项过多时是否进行分页。
    */
@@ -1461,7 +1464,7 @@ export interface SliderCfg {
   readonly height?: number;
 
   /** 滑块背景区域配置 */
-  readonly trendCfg?: TrendCfg;
+  readonly trendCfg?: Omit<TrendCfg, 'data'> & { data?: number[] };
   /** 滑块背景样式 */
   readonly backgroundStyle?: any;
   /** 滑块前景样式 */
@@ -1482,6 +1485,14 @@ export interface SliderCfg {
   readonly padding?: number[];
   /** 滑块文本格式化函数 */
   formatter?: (val: any, datum: Datum, idx: number) => any;
+}
+
+/**
+ * 事件 payload
+ */
+export type EventPayload = LooseObject & {
+  /** 触发事件的来源 */
+  source?: string;
 }
 
 export type EventCallback = (event: LooseObject) => void;
@@ -1733,7 +1744,7 @@ export interface ListCfg extends FacetCfg<ListData> {
 }
 
 export interface ListData extends FacetData {
-  readonly total: number;
+  readonly total?: number;
 }
 
 // ===================== matrix 相关类型定义 =====================
@@ -2116,6 +2127,14 @@ export interface StyleSheet {
   cSliderTextBorderColor?: string;
   /** Slider 字体标签描边粗细 */
   cSliderTextBorder?: number;
+
+  // -------------------- Scrollbar 组件样式--------------------
+  /** 滚动条 滚道填充色 */
+  scrollbarTrackFillColor?: string;
+  /** 滚动条 滑块填充色 */
+  scrollbarThumbFillColor?: string;
+  /** 滚动条 滑块高亮填充色 */
+  scrollbarThumbHighlightFillColor?: string;
 
   // -------------------- Geometry 图形样式--------------------
   /** 点图的大小范围 */
